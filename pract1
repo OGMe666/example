@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=320; user-scalable=no" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Minimal AppLaud App</title>
+<script type="text/javascript" charset="utf-8" src="cordova-1.9.0.js"></script>
+<script type="text/javascript" charset="utf-8">
+var t="",a,b,op,c;
+function nik(param)
+{
+t=t+param;
+document.getElementById("n1").value=t;
+}
+function oper(p)
+{
+a=t;
+op=p;
+document.getElementById("n1").value="";
+t="";
+}
+function clr()
+{
+document.getElementById("n1").value="";
+t="";
+}
+ function perf()
+ {
+b=t;
+if(op=='+')
+{
+c=parseInt(a)+parseInt(b);
+document.getElementById("n1").value=c;
+t="";
+}
+ else if(op=='-')
+ {
+c=parseInt(a)-parseInt(b);
+document.getElementById("n1").value=c;
+t="";
+}
+else if(op=='*')
+{
+c=parseInt(a)*parseInt(b);
+document.getElementById("n1").value=c;
+t="";
+}
+else if(op=='/')
+{
+if(parseInt(b)==0)
+{
+alert("cannot Divide With Zero!!!!!!");
+}
+}
+else
+{
+c=parseInt(a)/parseInt(b);
+document.getElementById("n1").value=c;
+t="";
+}
+ }
+</script>
+</head>
+<body>
+<h2>Calculator</h2>
+<table>
+<tr><td colspan="3"><input type="text" id="n1"></td><br>
+</tr>
+<tr>
+<td><input type="button" value="1" id="b1" onClick=nik(this.value)></td>
+<td><input type="button" value="2" id="b2" onClick=nik(this.value)></td>
+<td><input type="button" value="3" id="b3" onClick=nik(this.value)></td>
+</tr>
+<tr>
+<td><input type="button" value="4" id="b4" onClick=nik(this.value)></td>
+<td><input type="button" value="5" id="b5" onClick=nik(this.value)></td>
+<td><input type="button" value="6" id="b6" onClick=nik(this.value)></td>
+</tr>
+<tr>
+<td><input type="button" value="7" id="b7" onClick=nik(this.value)></td>
+<td><input type="button" value="8" id="b8" onClick=nik(this.value)></td>
+<td><input type="button" value="9" id="b9" onClick=nik(this.value)></td>
+</tr>
+<td colspan="2"><input type="button" value="0" id="b0" onClick=nik(this.value)></td>
+<td colspan="2"><input type="button" value="C" id="b0" onClick=clr()></td>
+</tr>
+<tr>
+<td><input type="button" value="+" onClick=oper(this.value)></td>
+<td><input type="button" value="-" onClick=oper(this.value)></td>
+<td><input type="button" value="*" onClick=oper(this.value)></td>
+</tr>
+<tr>
+<td><input type="button" value="/" onClick=oper(this.value)></td>
+<td><input type="button" value="=" onClick=perf(this.value)></td>
+</tr>
+</table>
+</body>
+</html>
